@@ -4,7 +4,13 @@ header {
     padding: 10px;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+    border: 1px solid;
+    border-radius: 10px;
+}
 
+div {
+    background-color: rgb(189, 194, 247);
+    font-size: 20px;
 }
 .Istoria {
     background-color:rgb(189, 194, 247);
