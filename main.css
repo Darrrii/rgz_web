@@ -1,11 +1,45 @@
 header {
     color: rgb(26, 26, 143);
-    padding: 10px;
     font-size: 30px;
+    padding: 10px;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
 }
-main {
-    color: rgb(13, 13, 14);
-    margin: 10px 20px;
+.Istoria {
+    background-color:rgb(189, 194, 247);
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px 2px;
     font-size: 20px;
+}
+.Osnovateli {
+    background-color:rgb(189, 194, 247);
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px 2px;
+    font-size: 20px;
+}
+.deat {
+    background-color:rgb(189, 194, 247);
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 10px 2px;
+    font-size: 20px;
+}
+.center {
+    display: block;
+    margin: auto;
+    height: 100px;
+}
+.ssilki {
+    background-color: rgb(128, 128, 236);
+    font-size: 20px;
+    text-align: justify;
+}
+a {
+    color: aliceblue;
+}
+a:hover {
+    color: yellow;
 }
