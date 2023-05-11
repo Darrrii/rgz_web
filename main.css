@@ -1,9 +1,9 @@
 header {
     background-color: rgb(149, 149, 245);
-    color: rgb(26, 26, 143);
+    color: #294f7c;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: sans-serif;
     padding: 10px;
     border: 1px solid;
     border-radius: 10px;
@@ -15,14 +15,26 @@ header {
 }
 
 div {
-    background-color: rgb(189, 194, 247);
+    background-color: rgb(212, 216, 252);
+    color: #294f7c;
     font-size: 20px;
     text-indent: 1.25cm;
     line-height: 150%;
     margin: 10px;
     border: 1px solid;
     border-radius: 2px;
+    border-color: #294f7c;
     padding: 10px;
+}
+h1 {
+   color: #294f7c; 
+}
+
+h4 {
+    color: #294f7c;
+    font-size: 20px;
+    padding: 5px;
+    margin: 7px;
 }
 
 .center {
@@ -33,11 +45,12 @@ div {
     margin-left: auto;
     margin-right: auto;
 }
+
 aside {
     top: 0;
     left: 0;
-    width: 200px;
-    background-color: rgb(133, 156, 251);
+    width: 940px;
+    background-color: rgb(202, 207, 250);
     text-align:left;
     font-size: 15px;
     border: 1px;

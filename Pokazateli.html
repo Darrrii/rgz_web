@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokazateli</title>
     <link rel="stylesheet" href="main.css">
+
+    <script>
+        function showExchange() {
+            let exchange=[11640, 11550, 11465, 11310, 11370, 11460, 11225, 11385, 11245, 
+        11385, 11245, 11195, 11345, 11415, 11345, 11230, 11190, 11145, 11095,11685, 10000, 10005 ];
+        let table=document.getElementById('dollar-exchange');
+        for(let i = 0; i < exchange.length; i++) {
+                let tr=document.createElement('tr');
+                let td=document.createElement('td');
+                td.innerHTML= exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            {
+                for (i=0; i<exchange.length; ++i) 
+                if (exchange[i] > exchange[i + 1]) max = exchange[i];
+                else min = exchange[i];
+            }
+            document.getElementById('detail').innerHTML= 'Минимальное значение: ' + min;
+            document.getElementById('detail').innerHTML= 'Максимальное значение: ' + max;
+        }
+    </script>
 </head>
 <body>
     <aside>
@@ -29,7 +51,6 @@
         <header>
             Основные финансовые показатели
         </header>
-    
         <main>
             <div style="margin-top: 64px;">
                 Выручка копании по МСФО в 2019 году составила 47 702 746 тыс. руб., чистая 
@@ -46,8 +67,11 @@
                     <td>28,5 млрд</td>
                 </tr>
             </table>
-        </main>
 
+        </main>
+        <button onclick="showExchange()">Цены закрытия за апрель</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
         <footer>
             Сайт сделала Пушкарева Дарья, ФБИ-12
         </footer>
