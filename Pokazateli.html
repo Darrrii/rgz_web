@@ -9,6 +9,19 @@
 
     <script>
         function showExchange() {
+            let data=[03.04.2023, 04.04.2023, 05.04.2023, 06.04.2023, 07.04.2023,10.04.2023,
+             11.04.2023, 11.04.2023, 12.04.2023, 13.04.2023, 14.04.2023, 17.04.2023, 
+             18.04.2023, 19.04.2023, 20.04.2023, 21.04.2023, 24.04.2023, 25.04.2023, 
+             26.04.2023, 27.04.2023, 28.04.2023 ];      
+             let table=document.getElementById('data');
+             for(let i = 0; i < exchange.length; i++) {
+             let tr=document.createElement('tr');
+                let td=document.createElement('td');
+                td.innerHTML= data[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+             }
+
             let exchange=[11640, 11550, 11465, 11310, 11370, 11460, 11225, 11385, 11245, 
         11385, 11245, 11195, 11345, 11415, 11345, 11230, 11190, 11145, 11095,11685, 10000, 10005 ];
         let table=document.getElementById('dollar-exchange');
@@ -71,7 +84,11 @@
         </main>
         <button onclick="showExchange()">Цены закрытия за апрель</button>
         <table border="1" id="dollar-exchange"></table>
+
+        <table border="1" id="data"></table>
+
         <div id="detail"></div>
+        
         <footer>
             Сайт сделала Пушкарева Дарья, ФБИ-12
         </footer>

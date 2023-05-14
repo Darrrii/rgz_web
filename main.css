@@ -56,6 +56,9 @@ aside {
     border: 1px;
 
 }
+a:visited {
+    color: rgb(166, 2, 255);
+}
 
 a:hover {
     color: yellow;
@@ -64,6 +67,7 @@ a:hover {
 a:active {
     color: blueviolet;
 }
+
 
 footer {
     background-image: linear-gradient(to bottom, white, rgb(30, 30, 188)) ;
