@@ -62,7 +62,7 @@ a {
     color: black;
     text-decoration: none;
     font-weight: bold;
-    position: relative;
+
 
 }
 a:visited {
@@ -89,4 +89,9 @@ footer {
     margin-top: auto;
     margin-left: -10px;
     margin-right: -10px;
+}
+
+iframe {
+    margin-left: 0px;
+    width: 900px;
 }
