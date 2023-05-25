@@ -102,3 +102,17 @@ p {
     margin: auto;
     padding:  10px;
 }
+table {
+    background-color: rgb(226, 229, 252);
+    font-size: 20px;
+    color: #294f7c;
+    width: 425px;
+}
+
+button {
+    width: auto;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #294f7c;
+    background-color: rgb(226, 229, 252);
+}
