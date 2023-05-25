@@ -9,32 +9,47 @@
 
     <script>
         function showExchange() {
-            let data=[ 'Дата', '03-04-2023', '04-04-2023', '05-04-2023', '06-04-2023', '07-04-2023','10-04-2023',
-             '11-04-2023', '11-04-2023', '12-04-2023', '13-04-2023', '14-04-2023', '17-04-2023', 
-             '18-04-2023', '19-04-2023', '20-04-2023', '21-04-2023', '24-04-2023', '25-04-2023', 
-             '26-04-2023','27-04-2023', '28-04-2023' ];  
+            let cours=[ 11640, 11550, 11465, 11310, 11370, 11460, 11225, 11385, 11245, 
+                        11385, 11195, 11345, 11415, 11345, 11230, 11190, 11145, 11095,11685, 10000, 10005 ];
+            
+            let date=[ '03.04.2023', '04.04.2023', '05.04.2023', '06.04.2023', '07.04.2023','10.04.2023',
+             '11.04.2023', '11.04.2023', '12.04.2023', '13.04.2023', '14.04.2023', '17.04.2023', 
+             '18.04.2023', '19.04.2023', '20.04.2023', '21.04.2023', '24.04.2023', '25.04.2023', 
+             '26.04.2023','27.04.2023', '28.04.2023', ]
+            
+            let  courseTable = document.getElementById('curs');
 
-            let exchange=[ 'Цена акции',11640, 11550, 11465, 11310, 11370, 11460, 11225, 11385, 11245, 
-        11385, 11195, 11345, 11415, 11345, 11230, 11190, 11145, 11095,11685, 10000, 10005 ];
-            let  table=document.getElementById('akzia-exchange');
+            for(let i = 0; i < cours.length; i++) {
+                let tr = document.createElement('tr');
+                let datetd = document.createElement('td');
+                let coursetd = document.createElement('td');
+                let minustd = document.createElement('td');
+                datetd.innerHTML = date[i];
+                coursetd.innerHTML = cours[i];
+                minustd.innerHTML = (cours[i] - cours[i-1]).toFixed(2);
+                tr.appendChild(datetd);
+                tr.appendChild(coursetd);
+                if(minustd.innerHTML == 'NaN') {
+                    minustd.innerHTML = '-';
+                    tr.appendChild(minustd);
+                }
+                else {
+                    tr.append(minustd);
+                }
+                courseTable.appendChild(tr);
+            }
+            
+                let sum = 0;
+                for ( let i = 0; i<cours.length; i++) {
+                sum = sum + cours[i];
+            }
+            let average= Math.floor(sum / cours.length);
+            document.getElementById('srednee').innerHTML= 'Среднеквадратическое отклонение цены: ' + average;
 
-            for(let i = 0; i < exchange.length; i++) {
-                let tr=document.createElement('tr');
-                let td=document.createElement('td');
-                let newtd=document.createElement('td');
-                td.innerHTML=exchange[i];
-                newtd.innerHTML=data[i];
-                tr.appendChild(newtd);
-                tr.appendChild(td);
-                table.appendChild(tr);
-            }
-            {
-                for (i=0; i<exchange.length; ++i) 
-                if (exchange[i] > exchange[i + 1]) max = exchange[i];
-                else min = exchange[i];
-            }
-            document.getElementById('detail').innerHTML= 'Минимальное значение: ' + min;
-            document.getElementById('detail').innerHTML= 'Максимальное значение: ' + max;
+            let maxCourse=Math.max(...cours);
+            let minCourse=Math.min(...cours);
+            document.getElementById('max').innerHTML= 'Максимальное значение: ' + maxCourse;
+            document.getElementById('min').innerHTML= 'Минимальное значение: ' + minCourse;
         }
     </script>
 </head>
@@ -70,11 +85,13 @@
             </table>
 
         </main>
-        <button onclick="showExchange()">Цены закрытия за апрель</button>
-        <table border="1"  id=akzia-exchange></table>
+        <button onclick="showExchange()">Цена закрытия акций компании "ОМЗ" за апрель</button>
+        <table border="1"  id="curs"></table>
+        <p id="srednee"></p>
+        <p id="max"></p>
+        <p id="min"></p>
 
 
-        <div id="detail"></div>
         
         <footer>
             Сайт сделала Пушкарева Дарья, ФБИ-12

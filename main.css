@@ -95,3 +95,10 @@ iframe {
     margin-left: 0px;
     width: 900px;
 }
+
+p {
+    color: #294f7c;
+    font-size: 20px;
+    margin: auto;
+    padding:  10px;
+}
